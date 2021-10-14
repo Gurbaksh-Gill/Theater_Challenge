@@ -68,12 +68,13 @@ void markNextThree(int theater[][20], int row, int lastPatron, int available[]) 
 void bookSeats(int theater[][20], int numSeats, int available[], FILE *output, char *resNum) {
 	int lastPatron, rowToSeat, i, col;
 	char row, base = 'A';
-	/* Start by checking enough seats in row theater[4][] or theater[5][] are available */
-	/* If yes, seat in middle row. If no, seat in closest row with numSeats available */
-	/* If no rows with seats available, seat patrons with anywhere with available seats */
+	
 	if (seatsAvailable(available) < numSeats) {
 		fprintf(output, "%s Cannot accommodate request due to number of seats available.\n", resNum);
 	} else {
+        /* Start by checking enough seats in row theater[4][] or theater[5][] are available */
+        /* If yes, seat in middle row. If no, seat in closest row with numSeats available */
+        /* If no rows with seats available, seat patrons with anywhere with available seats */
 		rowToSeat = findRow(numSeats, available);
 		if (rowToSeat != -1) {
 			fprintf(output, "%s", resNum);
