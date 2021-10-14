@@ -7,7 +7,7 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
+<!-- Instuctions to compile and run -->
 ### Instuctions to compile and run
 
 * Compile using a C compiler such as cc, gcc, etc. (ex. "cc seating.c -o execName").
@@ -21,7 +21,17 @@
 <!-- Assumptions -->
 ## Assumptions
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+* I assumed patrons would be most satisfied sitting in (or as close as possible to) the middle two rows and sitting together (sitting together being a higher priority). 
+* I assumed that the input file containing the reservations requests would be well formatted. Meaning that Rservations would be in the order that they were received (first being at the top and so on), and the max number of characters on a line would be 8 (ex. R001 200).
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- Algorithm Description -->
+## Algorithm Description
+
+* Start by checking if there are enough unoccupied seats in the theater to accommodate the current reservation. If no, a message informing the patron that enough seats are not available is printed to the output file. If yes, continue in booking process for current reservation.
+* Next, search for the row closest to the middle two rows (E & F) that can seat the current group together. 
+* If a row to seat the entire group together is found, they are seated starting from the left most available column and moving right. The 3 seats (or less if at the end of the row) next to the last patron will be marked as occupied for safety purposes.
+* If a row to seat the entire group together is not found, the row with the largest number of open seats is determined and most number of patrons from that group are seated in that row. The algorithm then recurses with the patrons that still need to be seated and will end once all have been seated (won't recurse infinitely since it is checked that the total number of seats to accommodate the reservation are available).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
