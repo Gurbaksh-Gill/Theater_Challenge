@@ -22,7 +22,7 @@
 ## Assumptions
 
 * I assumed patrons would be most satisfied sitting in (or as close as possible to) the middle two rows and sitting together (sitting together being a higher priority). 
-* I assumed that the input file containing the reservations requests would be well formatted. Meaning that Rservations would be in the order that they were received (first being at the top and so on), and the max number of characters on a line would be 8 (ex. R001 200).
+* I assumed that the input file containing the reservations requests would be well formatted. Meaning that Rservations would be in the order that they were received (first being at the top and so on), the input file will be formattted as "R000 #" followed by a space and then the number of patrons (3 digits at most), and the max number of characters on a line would be 8 (ex. R001 200).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
